@@ -32,6 +32,7 @@ const ImageGenerator = () => {
 
   const handleGenerateImage = async () => {
     try {
+      const auth = "Bearer " + secretKey;
       const response = await axios.post(
         "https://api.openai.com/v1/images/generations",
         {
@@ -42,7 +43,7 @@ const ImageGenerator = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: auth,
           },
         }
       );
